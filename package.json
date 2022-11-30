@@ -1,0 +1,30 @@
+{
+  "name": "semester-project2_auction-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "start": "npm run build && live-server"
+  },
+  "keywords": [],
+  "author": "lakhdar hafsi",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacdart2/TESTcopy-social-media-app-ca-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lacdart2/TESTcopy-social-media-app-ca-2/issues"
+  },
+  "homepage": "https://github.com/lacdart2/TESTcopy-social-media-app-ca-2#readme"
+}

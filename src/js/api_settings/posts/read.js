@@ -2,7 +2,7 @@
 
 import { API_AUCTION_URL } from "../constants.js";
 import { fetchToken } from "../fetchToken.js";
-import { remainingAll } from "../../ui/allCountDown.js";
+import { remaining } from "../../ui/countDown.js";
 
 const action = "/listings";
 const getListingsURL = `${API_AUCTION_URL}${action}`;

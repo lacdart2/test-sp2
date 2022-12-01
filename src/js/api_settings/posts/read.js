@@ -3,13 +3,6 @@
 import { API_AUCTION_URL } from "../constants.js";
 import { fetchToken } from "../fetchToken.js";
 import { remainingAll } from "../../ui/allCountDown.js";
-/* import { remaining } from "../../ui/countDown.js"; */
-/* import { postDetail } from "./postDetails.js"; */
-
-/* import {remainingAll} from "../../ui/allCountDown.js"; */
-
-
-
 
 const action = "/listings";
 const getListingsURL = `${API_AUCTION_URL}${action}`;
@@ -24,18 +17,15 @@ export async function read() {
         const response = await fetchToken(getListingsURL)
        
         const json = await response.json();
-        console.log(json[1].endsAt);
+        //console.log(json[1].endsAt);
 
         const event = new Date(json.endsAt);
-        console.log(json[1].endsAt);
+   
 
         postsContainer.innerHTML = "";
 
-        
-    
         json.forEach(function (post) {
-        
-     
+
             postsContainer.innerHTML +=
                 `<a class="post" href = "/post/detail/index.html?id=${post.id}">
                         <div class="card">
@@ -54,16 +44,11 @@ export async function read() {
                                             <i class="fa-solid fa-calendar-days"></i>
                                             ${post.created.toLocaleString().split('T')}
                                         </small>
-                                        <small>
-                                          
-                                          
-                                        </small>
                                     </div>
                                   
                                      <div class="post-image">
                                             <img src="${post.media}" class="img-fluid rounded" alt="${post.title}">
                                      </div>
-                                   
                                     
                                 </div>
                              
@@ -92,19 +77,14 @@ export async function read() {
                                          </div>
                                    </div>
                                </section> 
-
                                 <a href="/post/detail/index.html?id=${post.id}" class="btn btn-primary">Read More</a>
-                            </div>
-                       
+                            </div>                     
                         </div>
                      </a> `
 
-          remainingAll(post);  
+          remaining(post);  
             
         });
-
-     
-        
       
     } catch (error) {
         console.log(error);
